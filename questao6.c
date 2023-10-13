@@ -16,11 +16,15 @@ int main() {
     }
     
     for (int i = 0; i < (sizeof(numeros) / sizeof(numeros[0]))-1; i++) {
-        if (numeros[i] > numeros[i+1]) {
-            int aux;
-            aux = numeros[i];
-            numeros[i] = numeros[i+1];
-            numeros[i+1] = aux;
+        // printf("Iteração %d\n", i);
+        for (int j = 0; j < (sizeof(numeros) / sizeof(numeros[0]))-1; j++) {
+            // printf(" Iteração %d %d\n", i, j);
+            if (numeros[j] > numeros[j+1]) {
+                int aux;
+                aux = numeros[j];
+                numeros[j] = numeros[j+1];
+                numeros[j+1] = aux;
+            }
         }
     }
     printf("\nDepois de ordenar:\n");
