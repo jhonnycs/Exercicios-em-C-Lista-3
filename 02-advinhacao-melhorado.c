@@ -30,15 +30,23 @@ int main() {
         uma data específica, deixando o valor muito próximo do aleatório
     */
 
-    int valorMax;
     int valorMin;
-    
+    int valorMax;
+
     while(jogarNovamente) {
 
-        printf("Digite o valor máximo que poderá ser chutado:\n> ");
-        scanf("%d", &valorMax);
         printf("\nDigite o valor mínimo que poderá ser chutado:\n> ");
         scanf("%d", &valorMin);
+        printf("Digite o valor máximo que poderá ser chutado:\n> ");
+        scanf("%d", &valorMax);
+
+        while (valorMin >= valorMax) {
+            printf("Você digitou um valor mínimo maior que o valor máximo\n");
+            printf("Por favor, digite novamente o valor mínimo:\n> ");
+            scanf("%d", &valorMin);
+            printf("\nDigite novamente o valor máximo:\n> ");
+            scanf("%d", &valorMin);
+        }
 
         int intervalo = valorMax - valorMin + 1;
         int numeroSecreto = (rand() % intervalo) + valorMin;
