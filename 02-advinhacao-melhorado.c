@@ -140,6 +140,11 @@ int main() {
         printf("Deseja jogar novamente?\n");
         printf("(0) não jogar   (1) jogar\n\n> ");
         scanf("%d", &jogarNovamente);
+        while (jogarNovamente != 0 && jogarNovamente != 1) {
+            printf("Digite um valor válido\n");
+            printf("(0) não jogar   (1) jogar\n\n> ");
+            scanf("%d", &jogarNovamente);
+        }
     }
     return 0;
 }
