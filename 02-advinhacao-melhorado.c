@@ -40,12 +40,13 @@ int main() {
         printf("Digite o valor máximo que poderá ser chutado:\n> ");
         scanf("%d", &valorMax);
 
-        while (valorMin >= valorMax) {
-            printf("Você digitou um valor mínimo maior que o valor máximo\n");
+        while (valorMin >= valorMax || valorMin < 0 || valorMax < 0) {
+            printf("Você digitou um valor mínimo maior ou igual ao valor máximo\n");
+            printf(" ou um valor mínimo / máximo negativo.\n");
             printf("Por favor, digite novamente o valor mínimo:\n> ");
             scanf("%d", &valorMin);
             printf("\nDigite novamente o valor máximo:\n> ");
-            scanf("%d", &valorMin);
+            scanf("%d", &valorMax);
         }
 
         int intervalo = valorMax - valorMin + 1;
@@ -88,8 +89,8 @@ int main() {
             }
             ultimoChute = chute;
             
-            if (chute < 0) {
-                printf("Por favor, não chute um número negativo");
+            if (chute < 0 || chute < valorMin || chute > valorMax) {
+                printf("Por favor, não chute um número negativo ou fora da faixa de valores escolhida por você\n");
                 i--;
                 continue;
             }
