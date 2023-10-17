@@ -19,6 +19,9 @@ int main() {
     for (int i = num; i > 1; i--) {
         result = result * (i-1);
     }
+    if (num == 0) {
+        result = 1;
+    }
 
     printf("\n%d! = %d", num, result);
 

@@ -5,7 +5,6 @@
 int main() {
     int numeros[3];
 
-
     for (int i = 0; i < sizeof(numeros) / sizeof(numeros[0]); i++) {
         printf("Digite o número inteiro %d\n> ", i+1);
         scanf("%d", &numeros[i]);
@@ -16,9 +15,7 @@ int main() {
     }
     
     for (int i = 0; i < (sizeof(numeros) / sizeof(numeros[0]))-1; i++) {
-        // printf("Iteração %d\n", i);
         for (int j = 0; j < (sizeof(numeros) / sizeof(numeros[0]))-1; j++) {
-            // printf(" Iteração %d %d\n", i, j);
             if (numeros[j] > numeros[j+1]) {
                 int aux;
                 aux = numeros[j];
